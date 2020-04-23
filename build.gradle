@@ -1,7 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+apply plugin: "groovy"
+apply plugin: "java"
 buildscript {
-    
     repositories {
         google()
         jcenter()
@@ -24,6 +25,8 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+    compile group: 'androidx.navigation', name: 'navigation-fragment', version: '2.0.0-rc02'
+    compile group: 'androidx.navigation', name: 'navigation-ui', version: '2.0.0-rc02'
 }
+
